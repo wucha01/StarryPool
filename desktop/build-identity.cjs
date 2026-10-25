@@ -7,7 +7,7 @@ module.exports = function buildIdentity(metadata = {}) {
   return Object.freeze({
     channel: release ? 'release' : 'development',
     packageName: release ? 'relaydrop' : 'relaydrop-development',
-    productName: release ? 'RelayDrop' : 'RelayDrop Development',
+    productName: release ? '星月池' : '星月池开发版',
     executableName: release ? 'RelayDrop' : 'RelayDropDevelopment',
     appId: release ? 'app.relaydrop.desktop' : 'app.relaydrop.desktop.development',
     dataDirectoryName: release ? 'RelayDropDesktop' : 'RelayDropDesktopDevelopment',

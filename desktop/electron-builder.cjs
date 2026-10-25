@@ -11,6 +11,8 @@ module.exports = function configuration({ projectDir, outputDir, electronDist, v
     electronVersion: '45.0.0',
     electronDist,
     electronLanguages: ['zh-CN', 'en-US'],
+    // Pin electron-builder's checksum-verified unified NSIS toolset.
+    toolsets: { nsis: '1.2.1' },
     directories: { output: outputDir, buildResources: path.join(projectDir, 'desktop/assets') },
     extraMetadata: { name: identity.packageName, version, main: 'desktop/main.cjs', relaydropChannel: identity.channel, author: { name: 'RelayDrop contributors' } },
     asar: true,

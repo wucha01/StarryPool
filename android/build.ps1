@@ -1,4 +1,4 @@
-param(
+﻿param(
   [ValidateSet('Development','Release')][string]$Configuration = 'Development',
   [string]$SdkRoot = $(if ($env:ANDROID_SDK_ROOT) { $env:ANDROID_SDK_ROOT } else { $env:ANDROID_HOME }),
   [string]$JavaHome = $env:JAVA_HOME,
@@ -21,7 +21,7 @@ if ([string]::IsNullOrWhiteSpace($ApplicationId)) {
 }
 if ($ApplicationId -notmatch '^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$') { throw 'ApplicationId must be a lower-case Android application ID.' }
 if ($taskDevelopment -and $ApplicationId -eq $taskSourcePackage) { throw 'Development builds cannot use the existing production application ID.' }
-if ([string]::IsNullOrWhiteSpace($AppLabel)) { $AppLabel = if ($taskDevelopment) { 'RelayDrop Dev' } else { 'RelayDrop' } }
+if ([string]::IsNullOrWhiteSpace($AppLabel)) { $AppLabel = if ($taskDevelopment) { '星月池开发版' } else { '星月池' } }
 if ([string]::IsNullOrWhiteSpace($BuildDir)) { $BuildDir = Join-Path $taskRoot '.build\android' }
 if ([string]::IsNullOrWhiteSpace($OutputApk)) { $OutputApk = Join-Path $taskRoot $(if ($taskDevelopment) { 'dist\RelayDrop-Android-dev.apk' } else { 'dist\RelayDrop-Android-release.apk' }) }
 if ([string]::IsNullOrWhiteSpace($SdkRoot)) { throw 'Set ANDROID_SDK_ROOT / ANDROID_HOME or pass -SdkRoot.' }

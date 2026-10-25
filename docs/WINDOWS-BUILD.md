@@ -14,8 +14,8 @@ npm run build:windows
 
 构建输出位于 `dist/windows-development/`：
 
-- `RelayDrop-Development-Desktop-1.9.3-x64.exe`：便携版。
-- `RelayDrop-Development-Setup-1.9.3-x64.exe`：当前用户安装版。
+- `RelayDrop-Development-Desktop-1.9.5-x64.exe`：便携版。
+- `RelayDrop-Development-Setup-1.9.5-x64.exe`：当前用户安装版。
 - `build-report.json`：输入和输出的 SHA-256，以及相对路径。
 
 源码快照和构建缓存位于 `.build/`。这些目录均为本机构建产物，不应提交到 GitHub。程序代码保存在每次构建独立生成的快照中；构建结束后会逐文件核对源码、快照及 `app.asar`，源码中途变化会使构建失败。该检查验证打包内容一致性，不保证不同机器生成的 EXE 逐字节相同。
@@ -28,11 +28,11 @@ npm run build:windows
 
 | 项目 | 开发版 | 正式发行身份 |
 | --- | --- | --- |
-| 显示名称 | 星月夜开发版 | 星月夜 |
+| 显示名称 | 星月池开发版 | 星月池 |
 | 应用 ID | `app.relaydrop.desktop.development` | `app.relaydrop.desktop` |
 | 本机数据目录 | `%LOCALAPPDATA%/RelayDropDesktopDevelopment` | `%LOCALAPPDATA%/RelayDropDesktop` |
 | EXE 名称 | `RelayDropDevelopment.exe` | `RelayDrop.exe` |
-| “发送到”与启动项名称 | 星月夜开发版 | 星月夜 |
+| “发送到”与启动项名称 | 星月池开发版 | 星月池 |
 
 开发版与正式版分别使用独立的安装目录、托盘实例、文件池、设备身份、已保存记录和浏览器会话。安装器不自动启动程序，卸载保留应用数据。首次启动开发版会创建新的文件池，需要重新配对；不同发行身份之间的数据需通过备份与导入迁移。
 
